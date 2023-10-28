@@ -15,7 +15,10 @@ This project demonstrates a GUI widget framework that provides native look and f
 
     Process finished with exit code 0
     ```
-    ![image](https://github.com/UMMEATHIYA/Assignment3_FactoryMethod_SimpleGUI/assets/43459908/91569b70-d344-4462-8414-39d78308e92a)
+     ![image](https://github.com/UMMEATHIYA/Assignment3_FactoryMethod_SimpleGUI/assets/43459908/91569b70-d344-4462-8414-39d78308e92a)
+
+    ![image](https://github.com/UMMEATHIYA/Assignment3_FactoryMethod_SimpleGUI/assets/43459908/3a35330e-c3df-4cb1-83e7-0f77c6a5fdee)
+
 
 
 2. The program prompts the user to choose a platform (1=Windows, 2=macOS, 3=Linux).
