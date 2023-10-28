@@ -143,8 +143,29 @@ class LinuxFactory implements GUIFactory {
 // Main class for testing
 public class Main {
     public static void main(String[] args) {
-        GUIFactory factory = getFactoryFromUserInput();
+        Scanner input = new Scanner(System.in);
 
+        // Ask the user to choose a platform
+        System.out.println("Choose a platform (1=Windows, 2=macOS, 3=Linux): ");
+        int platform = input.nextInt();
+
+        // Create a factory object based on the user's choice of platform
+        GUIFactory factory;
+        switch (platform) {
+            case 1:
+                factory = new WinFactory();
+                break;
+            case 2:
+                factory = new MacFactory();
+                break;
+            case 3:
+                factory = new LinuxFactory();
+                break;
+            default:
+                throw new IllegalArgumentException("Invalid platform choice.");
+        }
+
+        // Use the factory object to create and render GUI elements for the selected platform
         AbstractTextField textField = factory.createTextField();
         AbstractPushButton pushButton = factory.createPushButton();
         AbstractListBox listBox = factory.createListBox();
@@ -152,23 +173,5 @@ public class Main {
         textField.render();
         pushButton.render();
         listBox.render();
-    }
-
-    private static GUIFactory getFactoryFromUserInput() {
-        //int platform = 2; // Assume user chose macOS
-        System.out.println("Choose a platform (1=Windows, 2=macOS, 3=Linux):");
-        Scanner sc =  new Scanner(System.in);
-        int platform = sc.nextInt();
-
-        switch (platform) {
-            case 1:
-                return new WinFactory();
-            case 2:
-                return new MacFactory();
-            case 3:
-                return new LinuxFactory();
-            default:
-                throw new IllegalArgumentException("Invalid platform choice.");
-        }
     }
 }
